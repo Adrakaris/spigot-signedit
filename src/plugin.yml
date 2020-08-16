@@ -1,0 +1,8 @@
+name: "SignEditorTest"
+main: "com.bocbin.signeditor.Main"  # the location of the main class
+version: "1.0.0 Alpha"
+author: "Bocbin"
+api-version: "1.16"
+
+commands:
+  Hello:  # ignore the error hopefully it works
