@@ -1,6 +1,6 @@
-name: "SignEditorPlusStuff"
-main: "com.bocbin.signeditor.Main"  # the location of the main class
-version: "1.0.0 Alpha Becrux"
+name: "TestPlugin"
+main: "com.bocbin.testplugin.Main"  # the location of the main class
+version: "1.1.0 Alpha Centauri"
 author: "Bocbin"
 api-version: "1.16"
 
@@ -8,3 +8,4 @@ commands:
   Hello:  # ignore the error hopefully it works
   Launch:
     aliases: "lh"
+  Doctor:
