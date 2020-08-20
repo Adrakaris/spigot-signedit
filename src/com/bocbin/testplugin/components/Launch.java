@@ -41,6 +41,10 @@ public class Launch implements CommandExecutor {
                         String textColour = colourTable.get(velocityProportion);  // provides a colour code
                         // player.sendMessage("<DBG> Textcolour is " + textColour + " VelocityProportion is " + velocityProportion);
 
+                        if (velocity > 50) {
+                            velocity = 50;
+                        }
+
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&" + textColour + "&lZooom!"));
                         player.setVelocity(player.getLocation().getDirection().multiply(velocity).setY(velocity));
 

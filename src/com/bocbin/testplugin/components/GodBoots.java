@@ -52,7 +52,7 @@ public class GodBoots implements CommandExecutor, Listener {
     }
 
     private ItemStack getItem() {
-        ItemStack boots = new ItemStack(Material.DIAMOND_BOOTS);
+        ItemStack boots = new ItemStack(Material.NETHERITE_BOOTS);
         ItemMeta meta = boots.getItemMeta();  // creates an item metadata
 
         assert meta != null;

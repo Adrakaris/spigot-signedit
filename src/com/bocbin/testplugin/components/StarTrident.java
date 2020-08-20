@@ -79,6 +79,7 @@ public class StarTrident implements CommandExecutor, Listener {
         meta.setLore(lore);  // setLore takes a List<String>
 
         meta.addEnchant(Enchantment.MENDING, 1, true);  // just for the shiny glint
+        meta.addEnchant(Enchantment.LOYALTY, 3, true);
 
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_ATTRIBUTES);
 
@@ -92,7 +93,7 @@ public class StarTrident implements CommandExecutor, Listener {
     Onl eft click, summon fireball.
     On right click, will add the player to a list of "activated players", this is used for trident hit
      */
-    @EventHandler()
+    @EventHandler
     public void onClick(PlayerInteractEvent event) {
         Player player = event.getPlayer();
         if (player.getInventory().getItemInMainHand().getType().equals(Material.TRIDENT))
@@ -112,6 +113,7 @@ public class StarTrident implements CommandExecutor, Listener {
                 if (event.getAction() == Action.LEFT_CLICK_AIR) {
                     player.launchProjectile(Fireball.class);
                     // https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/Projectile.html
+                    player.getInventory().getItemInMainHand().setDurability((short) (player.getInventory().getItemInMainHand().getDurability()-1));
                 }
             }
         if (list.contains(player.getName())) {
@@ -123,7 +125,7 @@ public class StarTrident implements CommandExecutor, Listener {
     On trident hit, if shot by a player in the activated cool list,
     will summon 3 drowneds in a 2 block radius around the trident collision point.
      */
-    @EventHandler()
+    @EventHandler
     public void onTridentLand(ProjectileHitEvent event) {
         // see what entity type it is
         if (event.getEntityType() == EntityType.TRIDENT)

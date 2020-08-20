@@ -1,6 +1,7 @@
 package com.bocbin.testplugin;
 
 import com.bocbin.testplugin.components.*;
+import com.bocbin.testplugin.guis.GuiCreator;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -25,8 +26,9 @@ public class Main extends JavaPlugin {
         this.getCommand("startrident").setExecutor(STARTRIDENT);
         this.getServer().getPluginManager().registerEvents(STARTRIDENT, this);
 
-        ChangeTeam CHANGETEAM = new ChangeTeam();
+        ChangeTeam CHANGETEAM = new ChangeTeam(GuiCreator.createTeamGui());
         this.getCommand("changeteam").setExecutor(CHANGETEAM);
+        this.getServer().getPluginManager().registerEvents(CHANGETEAM, this);
     }
 
     @Override
