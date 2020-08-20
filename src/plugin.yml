@@ -10,3 +10,6 @@ commands:
     aliases: "lh"
   Doctor:
   GodBoots:
+  StarTrident:
+  ChangeTeam:
+    aliases: "changeteams"

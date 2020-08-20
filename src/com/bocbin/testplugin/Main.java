@@ -1,8 +1,6 @@
 package com.bocbin.testplugin;
 
-import com.bocbin.testplugin.commands.Doctor;
-import com.bocbin.testplugin.commands.GodBoots;
-import com.bocbin.testplugin.commands.Launch;
+import com.bocbin.testplugin.components.*;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -16,10 +14,19 @@ public class Main extends JavaPlugin {
         // runs on server startup, on reload, etc.
         // this gets some commands from the commands package
         this.getCommand("launch").setExecutor(new Launch());
+
         this.getCommand("doctor").setExecutor(new Doctor());
+
         GodBoots GODBOOTS = new GodBoots();
         this.getCommand("godboots").setExecutor(GODBOOTS);
         this.getServer().getPluginManager().registerEvents(GODBOOTS, this);  // registers the listener for GodBoots
+
+        StarTrident STARTRIDENT = new StarTrident();
+        this.getCommand("startrident").setExecutor(STARTRIDENT);
+        this.getServer().getPluginManager().registerEvents(STARTRIDENT, this);
+
+        ChangeTeam CHANGETEAM = new ChangeTeam();
+        this.getCommand("changeteam").setExecutor(CHANGETEAM);
     }
 
     @Override

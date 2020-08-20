@@ -1,4 +1,4 @@
-package com.bocbin.testplugin.commands;
+package com.bocbin.testplugin.components;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
