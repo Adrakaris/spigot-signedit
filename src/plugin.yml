@@ -1,0 +1,9 @@
+name: "SignEditor"
+main: "com.bocbin.SignEdit.Main"
+version: "1.0.0"
+author: "Bocbin"
+api-version: "1.16"
+
+commands:
+  Signedit:
+    aliases: "se"

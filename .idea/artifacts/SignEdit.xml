@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SignEdit">
+    <output-path>$PROJECT_DIR$/out/artifacts/SignEdit</output-path>
+    <root id="archive" name="SignEdit.jar">
+      <element id="module-output" name="SignEdit" />
+    </root>
+  </artifact>
+</component>
