@@ -28,6 +28,12 @@ public class Launch implements CommandExecutor {
                         player.setVelocity(player.getLocation().getDirection().multiply(2).setY(2));
 
                     } else if (args.length == 1) {
+                        // require 2 digit number
+                        if (args[0].length() > 2) {
+                            player.sendMessage(ChatColor.RED + "<velocity> must be under 100!");
+                            return true;
+                        }
+
                         // colour code message
                         int velocity;
                         try {
@@ -40,10 +46,6 @@ public class Launch implements CommandExecutor {
                         int velocityProportion = Math.min(Math.floorDiv(velocity, 5), 7);  // divides input velocity by 5
                         String textColour = colourTable.get(velocityProportion);  // provides a colour code
                         // player.sendMessage("<DBG> Textcolour is " + textColour + " VelocityProportion is " + velocityProportion);
-
-                        if (velocity > 50) {
-                            velocity = 50;
-                        }
 
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&" + textColour + "&lZooom!"));
                         player.setVelocity(player.getLocation().getDirection().multiply(velocity).setY(velocity));
